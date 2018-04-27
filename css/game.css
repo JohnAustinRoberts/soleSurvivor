@@ -1,0 +1,150 @@
+body {
+	background-color: #333333;
+	margin: 0;
+	padding: 0;
+}
+
+#app-wrapper {
+	padding: 0;
+	margin: 0;
+}
+
+
+/*------------------------landing page-------------------------*/
+#landing-wrapper {
+	display: grid;
+	grid-template-columns: [leftStart] 1400px [rightEnd];
+	grid-template-rows: [topOfPage] 400px [bottomOfHeader] 20px [topOfContent] 100px [bottomOfContent] 20px [topOfFooter] 50px [bottomOfFooter];
+}
+
+#landing-titleSpan {
+	grid-column-start: leftStart;
+    grid-column-end: rightEnd;
+	grid-row-start: topOfPage;
+	grid-row-end: bottomOfHeader;
+	background-color: #333333;
+	display: grid;
+  	justify-content: center;
+ 	align-items: center;
+	color: #333333;
+	font-family: 'Sonsie One', cursive;
+	font-size: 100px;
+    text-shadow: -1px 0 #2eb82e, 0 1px #2eb82e, 1px 0 #2eb82e, 0 -1px #2eb82e;
+}
+
+#landing-subtitle {
+	grid-column-start: leftStart;
+	grid-column-end: rightEnd;
+	grid-row-start: bottomOfHeader;
+	grid-row-end: topOfContent;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	background-color: #333333;
+	color: tan;
+	font-family: 'Special Elite', cursive;
+	font-size: 50px;
+	text-decoration: underline;
+
+}
+
+#landing-startButton {
+	grid-column-start: leftStart;
+	grid-column-end: rightEnd;
+	grid-row-start: topOfFooter;
+	grid-row-end: bottomOfFooter;
+	background-color: #333333;
+	display: grid;
+  	justify-content: center;
+  	align-items: center;
+}
+
+#instructionsStart {
+	width: 100px;
+	height: 50px;
+	background-color: #2eb82e;
+	color: #333333;
+	border-radius: 25px;
+	font-family: 'Sonsie One', cursive;
+}
+
+
+/*-----------------------briefing page--------------------------*/
+
+#briefing-wrapper {
+	display: grid;
+	grid-template-columns: [leftStart] 200px [textStart] 1000px [textEnd] 200px [rightEnd];
+	grid-template-rows: [topOfPage] 50px [first] 50px [second] 50px [third] 50px [fourth] 50px [fifth] 50px [sixth] 50px [seventh] 50px [eighth] 50px [ninth] 50px [tenth] 50px [eleventh] 50px [twelvth] 50px [thirteenth] 50px [fourteenth] 50px [fifteenth] 50px [sixteenth] 50px [seventeenth] 50px [bottomOfPage];
+}
+
+#briefing-title {
+	display: grid;
+	grid-column-start: leftStart;
+	grid-column-end: rightEnd;
+	grid-row-start: topOfPage;
+	grid-row-end: second;
+	justify-content: center;
+	align-items: center;
+	background-color: #333333;
+	color: tan;
+	font-family: 'Special Elite', cursive;
+	font-size: 60px;
+	text-decoration: underline;
+}
+
+#briefing-text {
+	display: grid;
+	grid-column-start: textStart;
+	grid-column-end: textEnd;
+	grid-row-start: second;
+	grid-row-end: thirteenth;
+	justify-content: center;
+	/* align-items: center; */
+	background-color: tan;
+	color: #333333;
+	text-shadow: black;
+	font-family: 'Special Elite', cursive;
+	font-size: 20px;
+	border: 2px solid #DEB887;
+	padding: 5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#briefing-button {
+	display: grid;
+	grid-column-start: leftStart;
+	grid-column-end: rightEnd;
+	grid-row-start: thirteenth;
+	grid-row-end: thirteenth;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+	grid-column: 1fr 100px 1fr;
+}
+
+#briefing-index {
+	display: grid;
+	grid-column: 2;
+	justify-content: center;
+	padding-right: 10px;
+	color: #DEB887;
+}
+
+#next {
+	display: grid;
+	grid-column: 3;
+	justify-content: center;
+	padding-left: 10px;
+	color: #DEB887;
+}
+
+#prev {
+	display: grid;
+	grid-column: 1;
+	justify-content: left;
+	padding-left: 10px;
+	color: #DEB887;
+
+}
+

@@ -1,0 +1,712 @@
+this is the next iteration of the pubgjp site. gonna call it 'Sole Survivor: Isle of Extinction'. 
+
+index.html will be the welcome page with a clickable button that runs a function called instructions(). The Instructions function will utilize jquery's .empty() to empty the html content from the body, and reappend the new html layout for the instructions and walkthrough using jquery's innerHTML() function. 
+
+The instruction page should have a button to 'begin drop', which will be similar to the instructions() function, that we'll call gameOn(). It will again use jquery's .empty() to empty the body and innerHTML() to reformat the page so it's ready for the game.
+
+then we drop the player off at the landing point/ armory to gather up supplies with the team. The rest of the team is slaughtered, and then it is just the player left alive.
+
+each time the player changes location, we run a new function, that will update the output. 
+This way, we can have a different enemy list for each area, to make the game more easily manipulated, and we can have a little more control over the overall difficulty of the game. we can also create a different weapon and item list for each area so you don't find a staple gun in the armory, but also don't find an AK in the office supply closet. each time we change location, we also want to update the map.
+
+redo the svg of the map, and have each new location trigger the svg circle that represents that location change it's color to green
+or find a better way to create a manipulatible map. 
+
+briefing 1st draft-
+    As you look up at the large, glass rotating doors of the BELO Corporation tower, you read the letter you received a few days ago:
+
+    Greetings Lt. Pat Jenkins,
+        We here at the BELO Corporation would like to thank you for you tenacity in going through our rigorous screening process. We realize and understand that most positions would not require six interviews (two of which required polygraph tests), two physicals, a pyschological evaluation, an in-depth drug screening, and twelve personal references who were each individually interviewed. However, we stand by our thorough screening process to ensure that we employ only the best, most qualified personnel. With that being stated, I am happy to announce that your application for the role of On-Site Security Officer at BELO Corporation has been approved. We would like to begin your on-boarding process as soon as possible; to that end, please report to our headquarters in Miami, Florida to meet with me on September 8, 1972 at 9:00am. It is recommended that you bring a suitcase packed with everything you will need for a two week deployment. We are very excited to bring someone with your background onboard as an asset to our team, and I look forward with meeting with you.  
+                                           
+                                            Head of Recruitment,
+                                            Mr. Lucius Monroe
+
+    You take a deep breath and then walk into the tower. After taking the elevator to the 34th floor, you walk down the hallway and enter a large office and see a young man sitting behind a large oak desk. He is in his late twenties, and is dressed in a sharp blue suit; His piercing green eyes shine behind black rimmed glasses, and his clean cut looks match his almost monotone voice. "Good Morning, Lt. Jenkins. I have been looking forward to meeting you. Today I will be walking you through the full responsibilities of your position. Please have a seat." He motions for you to sit in one of the highback chairs lined with black leather. "You have been hired to tour our new Island Reserve compound, assess any possible security risks to visitors or the creatures contained on said compound. We have hired two game guides who will lead you on your excursion through the park. From here you'll be taken to the docks to take a private ship with our mute captain. He's mute so he won't give away any secrets! hahaha!" "arent you afraid of him writing something down?" "oh shit,hadn't thought of that."
+
+
+    BELO Corporation Employee Tree-
+                                                      Board of Directors 
+                               Johann Belo, Sybil Suggit, Esther Williams, Henrietta Poscovitch, 
+                               Joseph Martinez, Phillip Vren, Kelly Chu, Paul Lobson, Patricia Henley
+                                                             |
+                                       _______________CEO- Alexis Morgan ____________
+                                      /                      |                        \
+                                _____/                       |                         \____
+          Chief Financial Officer                  Chief Operations Officer                  Chief Information Officer
+               Julian Biaz                           Danielle Dellaruso                          Jeffery Thompson
+        /         |        \                     /           |           \                  /            |           \
+       /          |         \                   /            |            \                /             |            \
+Accounting |   Payroll   | Investment |     Human    |  Environmental | Logistic   |    Research   |    Animal        |      Animal    |
+Managers-  |   Managers- | Finding    |   Resources  |     Safety     | Managers-  | & Development |   Research       |     Cloning    |
+Janice Iba |Victoria Shen| Managers-  |   Managers-  |    Overwatch-  |   Roger    |     Team-     |    Team-         |      Team-     |
+___________|_____________|Bill Lamb___|_June Summers_|Alison Beckberts|__Levinson__|_Uthar Korvund_|Jonathan Crenshaw_|___Lydia Rose___|
+Chris      |   Shiven    |  Jerome    |   Melinda    |      Chris     |   Robert   |     Monroe    |   Jennifer       |    Jessica     |
+Hanley     |   Patel     |  Thied     |     Norn     |    Stratchley  |   Thimbs   |    Skovich    |   Bradley        |    Pliotti     |
+___________|_____________|____________|______________|________________|____________|_______________|__________________|________________|
+Alicia     |     Ravi    |  Alshawn   |    Francis   |      John      |   Sarah    |     Mark      |     Eric         |     Jason      |
+Chitney    |     Yung    |  Robinson  |    Galton    |    Von Neumer  |   Kinley   |   Firranti    |  Casteliano      |   Fredericks   |
+___________|_____________|____________|______________|________________|____________|_______________|__________________|________________|
+Sally      |    Jared    |   Mable    |   Cynthia    |      Polly     |   Jorge    |     Peter     |    Mason         |     Ashley     |
+Hunter     |    Conrad   |   Tumly    |    Blythe    |       Kent     |   Romero   |    Grummel    |  Billingsly      |     Wetzel     |
+___________|_____________|____________|______________|________________|____________|_______________|__________________|________________|
+Trevor     |    Miguel   |   Lillian  |     Allen    |      Steve     |  Jackson   |    Rosita     |    Megan         |    Hansel      |
+Hinkle     |    Garcia   | Brillberry |    Touring   |      Paxton    |   Boone    |     Perez     |   Planter        |    Gruber      |
+___________|_____________|____________|______________|________________|____________|_______________|__________________|________________|
+Sean       |   Natasha   |   
+Davidson   |    Popov    |
+___________|_____________|
+Departments-
+(dept name) - (VP Name)
+Accounting- Janice Iba (Oversees Accounting Management Council: Chris Hanley, Alicia Chitney, Sally Hunter, Trevor Hinkle, Sean Davidson)
+-Chris Hanley- Kenyan Wildlife Refuge
+    -Charles Bundy (purchasing dept)
+        -Nigel Rosenthal
+        -Dudley Peterman
+    -Michael Graham (tax dept)
+        -Stacey honea
+        -Muriel Jones
+    -Paul Cho (internal audit dept)
+        -Hugh Frettle
+        -Rhett Steele
+    -Stephanie Flenderman (payroll)
+        -Hannah Campbell
+        -Savannah Gonzalez 
+-Alicia Chitney- New Zealand Wildlife Refuge
+    -Samantha Steadman (purchasing)
+        -Gianni Gibroni
+        -Kyle Fibbinaci
+        -Stan pioneer
+    -Harold Lieberman (tax)
+        -Lamont Davis 
+        -Gabriel Lee
+    -Lisa Isom (internal audit)
+        -Gabrielle Stenton
+        -Janet Pescovich
+        -Cindy Samuels
+    -Frank Posner (payroll)
+        -Elizabeth Clancy
+        -David Pollack
+-Sally Hunter- Brazilian Wildlife Refuge
+    -Gina Agel (purchasing)
+        -Sidney pointer
+        -Lindsay Kim
+        -Corey Jensen
+    -Donna McFeldren (tax)
+        -Guy Vance
+        -Herbert Deacon (Herbie)
+        -Mondu Goldwaith
+    -Jordan Drumley (internal audit)
+        -Martha Romano
+        -Tammy Nolan
+    -Seth Miller (payroll)
+        -Richard Lee
+        -Jackie Clark
+-Trevor Hinkle- Florida Wildlife Refuge
+    -Nancy Wilson (purchasing)
+        -Nicole Granderson
+        -Angelina Benchly
+    -Greg Hill (tax)
+        -Juliet Frampton
+        -Oscar Plestilli
+    -Juan Torres (internal audit)
+        -Mya Kensin
+        -Althea Vernon
+        -Shiven Patel
+    -Judith Adams (payroll)
+        -Alfred Parker
+        -Samuel Watson
+-Sean Davidson-Island Wildlife Refuge
+    -Anna Baldorf (purchasing)
+        -Rain Phoenix
+        -Irving piazza
+    -Delilah Gemson (tax)
+        -Mindy fry
+        -Piper kenway
+        -Samuel justice
+    -Christian Lindberg (internal audit)
+        -Everett Montello
+        -Ruby Gaines
+        -Samwell Trucks
+    -Hector Norris (payroll)
+        -Clare Walker
+        -Brooke Thomas
+________________________________________________________________________
+
+
+Investment Seeking- Bill Lamb
+-Jerome Thied- Kenyan Wildlife Refuge
+    -Jim Sorenson (Government Lobbying)
+        -Kimberly Johnson
+        -Jessica Holden
+        -Clint West
+    -Kathryn Burke (Private Local Funding Seekers)
+        -Francine Whitfield
+        -Roger Gallaudet
+    -Christine Regalia(Public Local Fundraising Dept)
+        -Rueben Sanders
+        -Eustace Vollker
+        -Olivia Albright
+    -Kevin Laherty(Global Fundraising)
+        -Leopold Stotch
+        -Casey Bacon
+        -Marion Linsey
+-Alshawn Robinson- New Zealand Wildlife Refuge
+    -Lamar Donfield (Private Local Funding Seekers)
+        -Paulette Anastasio
+        -Keisha Amarth
+        -Abby Danielson
+    -Daniel Jenson (Public local Fundraising Dept)
+        -Kurt Bosner
+        -Jebidiah Stenner(Jed)
+        -Billy Cavanaugh
+    -Brett Flannigan (government lobbying)
+        -Harry Gallow
+        -Kirk Barrett
+        -Karen O’Shaughnessy
+    -Pamela Meechum (global fundraising)
+        -Nina Colette
+        -Sandra Enojado
+        -Patrice Dreamer
+-Mable Tumly- Brazilian Wildlife Refuge
+    -Adrienne Carver (global fundraising)
+        -Jasmine Dillinger
+        -Lonny Nuedorff
+        -Peggy Granger
+    -Ronald Lovelace (government lobbying)
+        -Kylie Lopez
+        -Durban Ranjesh
+        -Janis Grey
+    -Theresa Manchette (private local fundraising dept)
+        -Toby Henderson
+        -Ryan Hartman
+        -Dwight Wiley
+    -Fred Elmworth (public local fundraising dept)
+        -Evan Grand
+        -Brian Tamlin
+-Lillian Brillberry- Florida Wildlife Refuge
+    -James Delaney (government lobbying)
+        -Seamus Finnagan
+        -Lucius Butler
+    -Oliver Scott (private local fundraising)
+        -Jacob Hidalgo
+        -Joshua Parker
+    -Yasmin Ronaldo (public local fundraising)
+        -Barry  Denton
+        -Max Lowery
+        -Maxine beurger
+    -Melissa Crawley (global fundraising)
+        -Adam Cole
+        -Kristen Eastwood
+-Keith Jeffries- Island Wildlife Refuge
+    -Axel Elswood (government lobbying)
+        -Gus Freeney
+        -Troy Nova
+    -Lawrence Hamilton (private local fundraising)
+        -Hunter Demsley
+        -Mauve Schultz
+    -Lakshmi Patel (public local fundraising)
+        -Peter Bryant
+        -Justine Reid
+    -Frieda Lopez (global fundraising)
+        -Manuel Reyes
+        -Gary Menendez
+________________________________________________________________________
+
+HR- June Summers
+-Melinda Norn- 
+    -Grant Peterson (Vetting Candidates Dept)
+        -Jenny Bradford
+        -Lyle Feinman
+    -Andrew Fett (Onboarding/Training)
+        -Elizabeth Hunt
+        -Boris Nurembourg
+        -Richard Hodgkins
+    -Rachel Lagerfeld (Conflict Resolution)
+        -Jordan Hughes
+        -mitchell Lowery
+    -Cindy Plackard (Motivation)
+        -Louis Shotel
+        -Constance Michelle
+-Francis Galton- 
+    -Grace Spalding (Vetting Candidates Dept)
+        -Kenneth Dreyfuss
+        -Alec Murphy
+        -Lois Seinfeld
+    -Vincenzo Viatelli (Onboarding/Training)
+        -Jeremy Liner
+        -Neil Crenly
+        -Jessica Mousse
+    -Chester Herbert (Conflict Resolution)
+        -Patty Jenkins
+        -Bill Williamson
+        -Jeffery Tamcoor
+    -Alex Helm (Motivation)
+        -Lewis white
+        -James Laramie
+        -Nicole O'Connor
+-Cynthia Blythe- 
+    -Ted Taylor (Vetting Candidates Dept)
+        -Samantha Nunez
+        -Brendan Smith 
+        -Brandon Smith
+    -Dwight Moore (Onboarding/Training)
+        -Hugh Kline
+        -Barry Rickson
+        -Heidi Plum
+    -Katya Sokolov (Conflict Resolution)
+        -Wesley Yellow
+        -Grant Bunson
+        -Renee Henkle
+    -Britney Hughes (Motivation)
+        -Bob Newman
+        -Sandra Banning
+        -Juliet Sawyer
+-Allen Touring-
+    -Bradley McKinnon (Vetting Candidates Dept)
+        -Boris Popov
+        -Chandra Michaelson
+        -Melissa McHale
+    -Chloe Vaux (Onboarding/Training)
+        -Penelope Jackson
+        -Marsha Beddingsly
+        -Paul Jacobs
+    -Mary Hayes (Conflict Resolution)
+        -Simon Cloves
+        -Henry Hummer
+        -Caroline Stevenson
+    -Everett Brooks (Motivation)
+        -Alfred Diaz
+        -Michelle Sage
+-Craig Winkle- Island Wildlife Refuge
+    -Jane Cabrera (Vetting Candidates Dept)
+        -Nancy Drange
+        -Chris Viotto
+        -Kevin Monaghan
+    -Penelope Aybar (Onboarding/Training)
+        -Courtney Kind
+        -Fanny Jones
+    -Stedd Murphy (Conflict Resolution)
+        -Clare Weir
+        -Darnell Lesh
+        -Leslie Banner 
+    -Humphrey Saltavio (Motivation)
+        -Nathan Escudo
+        -Hugo Kitney
+________________________________________________________________________
+Environmental Safety Overwatch- Alison Beckberts
+Chris Stratchley-
+    -Kate Otto (Environmental Engineering)
+        -Jack Mason
+        -Flint Roberts
+        -Jennifer Williams
+    -Quincy Slater (Environmental Science/Research)
+        -Beatrix Jones
+        -Kyle Stanford
+        -Clyde Jellings
+    -Jan Kowalski (Geologist)
+        -Rachel Bradford
+        -Monica Jacobson
+    -Werner Schmidt (OSHA Division)
+        -Nelson Mandehar
+        -Janet Isle
+John Von Neumer-
+    -Ranjesh Kapoor (Environmental Engineering)
+        -Fred Crow
+        -Samuel Baker
+        -Alex Fjord
+    -Monica Evans (Environmental Science/Research)
+        -Lisa Ludwig
+        -Kurt North
+        -Nigel Powers
+    -Ralph Griffin (Geologist)
+        -Bernice Linden
+        -Lyle Wexley
+    -Linda Coleman (OSHA Division)
+        -Kiera Harris
+        -Dave Benjamin
+Polly Kent-
+    -Bruno Barnes (Environmental Engineering)
+        -Heath Davidson
+        -Belinda Mewes
+        -Jules Oscar
+    -Jill Russell (Environmental Science/Research)
+        -Mark Robertson
+        -Stephanie Henry
+        -Thomas Mankle
+    -Benjamin Patterson (geology)
+        -Joseph Pinter
+        -Corey Quick
+    -Bernice Edwards (OSHA Division)
+        -George Hammerfell
+        -James Zeigler
+Steve Paxton-
+    -Ramses Starfire (Environmental Engineering)
+        -Jeffery Child
+        -Kimberly Adage
+        -Adam Frederickson
+    -Lavender Sellers (Environmental Science/Research)
+        -John Vocal
+        -Lindsay Manly
+        -Sarah Relagance
+    -Wendy Ramirez (Geologist)
+        -Janessa Underfoot
+        -Sidney Fox
+    -Tony Federly (OSHA Division)
+        -Melinda Vance
+        -Matthew Mercer
+-Suzanne Maybin- Island Wildlife Refuge
+    -Oswald Donaldson (Environmental Engineering)
+        -Jonathan Boudough
+        -Rebeccah Hunley
+        -Peter Pointer
+    -Donald Brewer (Environmental Science/Research)
+        -Raoul Juxtapose
+        -Jack Flash
+        -Steve Peters
+    -Natalie Finnburger (geology)
+        -Tammy Bundy
+        -Jasper O'Shaughnessy
+    -Heath Mulaney (OSHA Division)
+        -Miguel Ramirez
+        -Allen Loganson
+________________________________________________________________________
+Logistics- Roger Levinson
+Robert Thimbs- Kenyan Wildlife Refuge
+    -Perry McManus (cooking)
+        -Beth
+        -Edward
+    -Mario Bellacera (construction)
+        -Jason
+        -Lauren
+        -Alicia
+        -Connor
+    -Michelle Diaz (maintenance)
+        -
+        -
+        -
+    -Diana Hayes (sanitation)
+        -
+        -
+Sarah Kinley- New Zealand Wildlife Refuge
+    -Derek Gray (cooking)
+        -
+        -
+    -Courtney Powell (construction)
+        -
+        -
+        -
+        -
+    -Colin Wood (maintenance)
+        -
+        -
+        -
+    -Veronica Harris (sanitation)
+        -
+        -
+Jorge Romero- Florida Wildlife Refuge
+    -Dean Stewart (cooking)
+        -
+        -
+    -Cassandra Bell (construction)
+        -
+        -
+        -
+        -
+    -Kelsey Freeman (maintenance)
+        -
+        -
+        -
+    -Cedric Bishop (sanitation)
+        -
+        -
+Jackson Boone- Brazilian Wildlife Refuge
+    -Scooter Dunn (cooking)
+        -
+        -
+    -Charlene Barker (construction)
+        -
+        -
+        -
+        -
+    -Sidney Todd (maintenance)
+        -
+        -
+        -
+    -Lenny Andrews (sanitation)
+        -
+        -
+-Maurice Spooner- Island Wildlife Refuge
+    -Anthony Crane (cooking)
+        -
+        -
+        -
+    -Marshawn Blade (construction)
+        -
+        -
+        -
+        -
+    -Nathan Serenity (maintenance)
+        -
+        -
+        -
+    -Toki Swigelff (sanitation)
+        -
+        -
+________________________________________________________________________
+
+R&D- Uthar Korvund
+Monroe Skovich-
+    -Rebeccah Fellows (cloning tech manufacturing)
+        -
+        -
+        -
+    -Wade Montgomery (alternative weapons development)
+        -
+        -
+    -Jasper Baldwin (Weather Manipulation research)
+        -
+        -
+    -Beth Fleming (potential cross-bred creatures)
+        -
+        -
+        -
+Mark Firranti-
+    -Darrell Chapman (cloning tech manufacturing)
+        -
+        -
+        -
+    -Xavier Sullivan (alternative weapons development)
+        -
+        -
+    -Paula Fisher (Weather Manipulation research)
+        -
+        -
+    -Midge Stevenson (potential cross-bred creatures)
+        -
+        -
+        -
+Peter Grummel-
+    -Gerald Price (cloning tech manufacturing)
+        -
+        -
+        -
+    -Katrina Sherman (alternative weapons development)
+        -
+        -
+    -Nicholas Dawson (Weather Manipulation research)
+        -
+        -
+    -Tabitha Boyd (potential cross-bred creatures)
+        -
+        -
+        -
+Rosita Perez-
+    -Philomena Gregovich (cloning tech manufacturing)
+        -
+        -
+        -
+    -Beatrice Hudson (alternative weapons development)
+        -
+        -
+    -Moira Burton (Weather Manipulation research)
+        -
+        -
+    -Manuel Watts  (potential cross-bred creatures)
+        -
+        -
+        -
+-Audrey Scuttle- Island Wildlife Refuge
+    -Terrence Mahir (cloning tech manufacturing)
+        -
+        -
+        -
+    -Stroud Naples (alternative weapons development)
+        -
+        -
+    -Vladimir Houschev (Weather Manipulation research)
+        -
+        -
+    -Jamie Onkle (potential cross-bred creatures)
+        -
+        -
+________________________________________________________________________
+
+Animal Research Team- Jonathan Crenshaw
+Jennifer Bradley-
+    -George Jackson (birds)
+        -
+        -
+    -Lauren Foreman (reptiles)
+        -
+        -
+    -Charlotte Wolfe (mammals)
+        -
+        -
+    -Henry Armstrong (extinct creatures)
+        -
+        -
+Eric Casteliano-
+    -Kiera Burns (birds)
+        -
+        -
+    -Adalene Piroux (reptiles)
+        -
+        -
+    -Gary Chandler (mammals)
+        -
+        -
+    -Aaron Hoffman (extinct creatures)
+        -
+        -
+Mason Billingsly-
+    -Elaine Rivers (birds)
+        -
+        -
+    -Camille Hardy (reptiles)
+        -
+        -
+    -Iglesio Suarez (mammals)
+        -
+        -
+    -Kurt Barnett (extinct creatures)
+        -
+        -
+Megan Planter-
+    -Brendan Keller (birds)
+        -
+        -
+    -Clara Middleton (reptiles)
+        -
+        -
+    -Julia Murray (mammals)
+        -
+        -
+    -Clyde Barlow (extinct creatures)
+        -
+        -
+-Clarence Montaine- Island Wildlife Refuge
+    -Phyllis Weiss (birds)
+        -
+        -
+    -Dennis Night (reptiles)
+        -
+        -
+    -Renee Verchance (mammals)
+        -
+        -
+    -Matt Ross (extinct creatures)
+        -
+        -
+________________________________________________________________________
+
+Animal Cloning Team- Lydia Rose
+Jessica Pliotti-
+    -Justin Dangleford (DNA Splicing)
+        -
+        -
+    -Hank Nguyen (DNA Rebuilding)
+        -
+        -
+        -
+    -Juanita Burgess (Material Gathering)
+        -
+        -
+    -Elsa Carlson (Incubation)
+        -
+        -
+        -
+Jason Fredericks-
+    -Ilana Matthews (DNA Splicing)
+        -
+        -
+    -Flash Daniels(DNA Rebuilding)
+        -
+        -
+        -
+    -Buck Logan (Material Gathering)
+        -
+        -
+    -Ellie Cummings (Incubation)
+        -
+        -
+        -
+Ashley Wetzel-
+    -Penny Robbins (DNA Splicing)
+        -
+        -
+    -Larry Wilcox(DNA Rebuilding)
+        -
+        -
+        -
+    -Jerry Randall (Material Gathering)
+        -
+        -
+    -Desmond Pierce (Incubation)
+        -
+        -
+        -
+Hansel Gruber-
+    -Nadia Moss (DNA Splicing)
+        -
+        -
+        -
+    -Iris Leslie(DNA Rebuilding)
+        -
+        -
+    -Zachary Kingsley (Material Gathering)
+        -
+        -
+    -Norton Jennings (Incubation)
+        -
+        -
+        -
+-Clarice Whitman- Island Wildlife Refuge
+    -Lucy Piers (DNA Splicing)
+        -
+        -
+        -
+    -Ursula Sanchez(DNA Rebuilding)
+        -
+        -
+    -Luke Feldman (Material Gathering)
+        -
+        -
+    -Blake Bottles (Incubation)
+        -
+        -
+        -
+________________________________________________________________________
+ Names for NPCs:
+        
+
+
+timeline-
+war (1944) - Albert Belo sees 'brutality of man' with men in his unit gleefully killing all animals they passed, skinning them, and bringing home the pelts as trophies. He is horrified, and decides to dedicate his life to saving as many animals as he can.
+post-war - 
+-(1946) Johan Belo wins the lottery. And starts his own company focused on saving as many animals as he can. He names his company the 'Bodyguarding Endangered Lives Operation'. The goal of the company is to save as many endangered species as possible.
+-(1946) Belo purchases large section land neighboring the everglades and converts it back into the everglades, they send several boats out and create floating labs on shallow bottomed pontoon boats. The main focus of these researchers are to identify endangered species and to use whatever means are necessary to ensure the survival of as many species as possible. Their main target was florida gators, as they were being harvested for their leather skin.
+-(1951)After 5 years of successfully running the everglades refuge, BELO purchases a large section of amazon jungle, and creates tree houses with glass floors and walls, trying to get a closer look at the wildlife. These researchers followed the same steps as their Floridian counterparts, attempting to identify endangered species, and to assist them in any way possible. Their main target was jaguars, and golden eagles, both hunted to near extinction. This caused an impact on the monkeys in the amazon, and they would occasionally attack the treehouses.
+-(1961) 10 years after the purchase of the amazon, Johan Belo takes his company public, and joins the board of directors.
+-(1962) 1 year after the company goes public, a section of New Zealand is purchased, and bunkers are installed throughout the property, in an effort to minimize the impact of the researchers. These scientists did not do the same thing as their counterparts in Brazil and Florida. Instead at the New Zealand refuge, the scientists began analyzing the DNA structures of several of the creatures there, trying to find and isolate both the DNA of the Moa, and the lizard Megalania. They also begin to experiment with genetic cloning. 
+-(1969) After 7 years, they are able to create a clone of small birds. 
+-(1972) 3 years after that, they are able to clone lizards from scratch.  
+-(1977) 5 years after the purchase and building of the New Zealand facility, BELO Corp. purchases a large section of land in Kenya. These scientists focused on collecting the DNA of more mammals to test their cloning techniques on. Their main targets are hyenas, white rhinos, and tigers
+-(June 1979) Island Refuge purchased
+-(Nov 1979) Animals moved to Extinction Island
+-(Feb 1980) Haast Eagle is birthed using cloning on Extinction Island
+-(Sept 1981) Haast Eagle goes wild, kills everyone on Island
+-(Oct 1981) Player is sent to investigate the events on Island
+
+
+
+Animals cloned :
+florida- gator, egret, florida panther
+brazil- jaguar, golden eagle, monkey
+NZ- moa, megalania, haast eagle, 
+Kenya- hyena, white rhino
+
+
+-B.E.L.O. Meanings-
+Bringing Environmental Law Outside
+Banning Endangered Life Occlusion
+Bodyguarding Endangered Lives Operation  

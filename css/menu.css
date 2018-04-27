@@ -1,0 +1,153 @@
+/*-----------------------game page--------------------------*/
+
+#game-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
+	grid-template-rows: repeat(36, 25px);
+	grid-column-gap: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/*  Left content */
+#game-stats {
+	display: grid;
+	grid-column: 1;
+	grid-row: 25 / 28;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	color: #26ad6a;  
+}
+
+#game-player-stats {
+	display: grid;
+	grid-column: 1;
+	grid-row: 6 / 15;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	color: #26ad6a; 
+}
+
+#game-companion-stats {
+	display: grid;
+	grid-column: 1;
+	grid-row: 16 / 24;
+	background-color: #333333;
+	border: 2px solid #26ad6a;	
+	color: #26ad6a; 
+}
+
+#game-location-stats {
+	display: grid;
+	grid-column: 1;
+	grid-row: 20 / 24;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	justify-content: center;
+	align-items: center;
+	color: #26ad6a; 
+}
+
+#logo {
+	display: grid;
+	grid-column: 1;
+	grid-row: 2 / 5;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	justify-content: center;
+	align-items: center;
+	color: #26ad6a; 
+}
+/* center content */
+#game-image {
+	display: grid;
+	grid-column: 3;
+	grid-row: 2 / 12;
+	justify-content: center;
+	align-items: center;
+}
+
+#game-output {
+	display: grid;
+	grid-column: 2 / 5;
+	grid-row: 13 / 27;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	/* justify-content: center; */
+	align-items: center;
+	color: #26ad6a; 
+	padding-left: 10px;
+}
+
+/* action bar */
+#game-action-bar {
+	display: grid;
+	grid-column: 2 / 5;
+	grid-row: 27 / 29;
+	background-color: #333333;
+	border: 2px solid #26ad6a;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+}
+
+#attackButton {
+	display: grid;
+	grid-column: 1;
+	background-color: #26ad6a;
+}
+
+#healButton {
+	display: grid;
+	grid-column: 2;
+	background-color: #26ad6a;
+}
+
+#searchButton {
+	display: grid;
+	grid-column: 3; 
+	background-color: #26ad6a;
+}
+
+.actionButton {
+	display: grid;
+	width:100px;
+	background-color: #26ad6a;
+}
+
+
+/*Search Page*/
+#foundItemText {
+	background-color: yellow;
+	color: aqua;
+	font-size: 20px;
+}
+
+#swapButtons {
+	margin: 15px;
+}
+
+#swapWeaps {
+	margin-right: 30px;
+	margin-left: 30px;
+}
+/* right content */
+#game-map {
+	display: grid;
+	grid-column: 5;
+	grid-row: 3 / 27;
+	background-color: #333333;
+	border: 2px solid #26ad6a;	
+}
+
+/* Winning Screen */
+#winScreen {
+	display: grid;
+	grid-column: 1 / 5;
+	grid-row: 3 / 27;
+	background-color: #26ad6a;
+	color: #333333;
+	justify-content: center;
+	align-items: center;
+	font-size: 48px;
+}
