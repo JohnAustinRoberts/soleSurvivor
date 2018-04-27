@@ -154,6 +154,7 @@ function createLocations() {
 		locations[i].foundEquip = findableEquipment[foundEquipIndex];
 		var spawnChance = Math.floor((Math.random() * 100) + 1);
 		if (spawnChance > 50) {
+			locations[i].enemyPresent = true;
 			if(i<1) {
 				console.log("No Enemy Spawned in First Area.");
 			} else if (0 < i < 5) {
@@ -175,7 +176,7 @@ function createLocations() {
 			} else if (i == 18) {
 				console.log("No Enemy Spawned at the Dock.");
 			}
-		}	
+		} else locations[i].enemyPresent = false;	
 	}
 };
 createLocations();
@@ -469,12 +470,8 @@ function loadRoad() {
 	roadCircle.style.fill = 'red';
 	$('#game-image').empty();
 	$('#game-action-bar').empty();
-	if (currentLocation.enemy.defeated == false){
-		if (currentLocation.enemy.name == "none" ) {
-			$("#game-image").html("<img src='./images/gameTrail.jpg' style='height: 250px; width: 600px;'>");
-			$("#game-output").html("As you leave the safety of the Armory, you begin to walk down a dirt road leading to the first bunker. The trees stretch high up above you, forming a thick canopy, allowing very little moonlight to fall. The deafening silence is only punctuated by your footsteps on the gravel roadway. It takes nearly a half an hour, but you finally see the entrance to the first bunker ahead.");
-			$('#game-action-bar').html('<button id="loadB1Button" class="actionButton" style="grid-column: 2;" onclick="loadB1()">Head into the first bunker.</button>');
-		} else if (currentLocation.enemy.name == "Stag Moose") {
+	if (currentLocation.enemyPresent == true){
+		if (currentLocation.enemy.name == "Stag Moose") {
 			$("#game-image").html("<img src='./images/gameTrail.jpg' style='height: 250px; width: 600px;'>");
 			$("#game-output").html("As you walk down the game trail, you hear a branch snap under the weight of some creature off to your left. You turn, raising your flashlight, to see a gigantic moose. It's head is nearly nine feet off the ground, a tower of lean muscle, with huge, wide, flat antlers. It stamps it's hoof in challenge, and snorts loudly, before making a load growling shriek-like sound.");
 			$('#game-action-bar').html('<button id="attackMooseButton" class="actionButton" style="grid-column: 1;" onclick="attack()">Attack the Moose</button><button id="runAwayRoadButton" class="actionButton" style="grid-column: 2;" onclick="runAwayRoad()">Run for the next bunker</button><button id="usePlayerEquipButton" class="actionButton" style="grid-column: 3;" onclick="usePlayerEquip()">Use '+player.equip.name+'</button>');
@@ -491,11 +488,12 @@ function loadRoad() {
 			$("#game-output").html("As you walk down the game trail, you hear a branch snap under the weight of some creature off to your left. You turn, raising your flashlight, to see a small tiger stalking up behind you. It growls, and prepares to pounce.");
 			$('#game-action-bar').html('<button id="attackMooseButton" class="actionButton" style="grid-column: 1;" onclick="attack()">Attack the Tiger</button><button id="runAwayRoadButton" class="actionButton" style="grid-column: 2;" onclick="runAwayRoad()">Run for the next bunker</button><button id="usePlayerEquipButton" class="actionButton" style="grid-column: 3;" onclick="usePlayerEquip()">Use ' + player.equip.name + '</button>');
 		} 
-	} else if (currentLocation.enemy.defeated == true) {
-
+	} else if (currentLocation.enemyPresent == false) {
+			$("#game-image").html("<img src='./images/gameTrail.jpg' style='height: 250px; width: 600px;'>");
+			$("#game-output").html("As you leave the safety of the Armory, you begin to walk down a dirt road leading to the first bunker. The trees stretch high up above you, forming a thick canopy, allowing very little moonlight to fall. The deafening silence is only punctuated by your footsteps on the gravel roadway. It takes nearly a half an hour, but you finally see the entrance to the first bunker ahead.");
+			$('#game-action-bar').html('<button id="loadB1Button" class="actionButton" style="grid-column: 2;" onclick="loadB1()">Head into the first bunker.</button>');	
 	}
 }
-
 function attack() {
 
 }
